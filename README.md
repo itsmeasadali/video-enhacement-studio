@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Video Processing Web Application
 
-## Getting Started
+This web application allows users to process and manipulate video files directly in the browser using FFmpeg.js. It provides various video processing options such as format conversion, trimming, speed adjustment, watermarking, and video enhancement.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Convert video formats (MP4, WebM, AVI, MOV)
+- Trim videos by specifying start and end times
+- Adjust video playback speed
+- Add watermark text to videos
+- Apply various enhancements (HDR, noise reduction, 4K upscaling)
+- Combine multiple processing options
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- React
+- TypeScript
+- FFmpeg.js
+- Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Setup and Configuration
 
-## Learn More
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/video-processing-app.git
+   cd video-processing-app
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Configure FFmpeg:
+   - Ensure that the FFmpeg WASM files are properly located in the `public` directory of your project.
+   - The required files are typically:
+     - `ffmpeg-core.js`
+     - `ffmpeg-core.wasm`
+     - `ffmpeg-core.worker.js`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-## Deploy on Vercel
+5. Open your browser and navigate to `http://localhost:3000` (or the port specified by your React setup).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Upload a video file using the file input.
+2. Choose a processing option:
+   - Format Conversion
+   - Trim Video
+   - Adjust Speed
+   - Add Watermark
+   - Apply Enhancements
+   - All Options
+3. Configure the selected option using the provided inputs.
+4. Click the "Process Video" button to start processing.
+5. Wait for the processing to complete. The processed video will be displayed below the options.
+
+## Notes
+
+- Processing large videos may take some time and consume significant browser resources.
+- The application uses client-side processing, so no files are uploaded to a server.
+- Ensure your browser is up-to-date for the best compatibility with Web Assembly (used by FFmpeg.js).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
